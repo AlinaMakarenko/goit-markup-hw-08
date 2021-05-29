@@ -1,0 +1,403 @@
+.top {
+  display: flex;
+  min-width: 320px;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .navigation__list {
+    display: none;
+  }
+  .contact {
+    display: none;
+  }
+  .top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .navigation__button {
+    padding: 12px 8px;
+    background-color: transparent;
+    border-color: transparent;
+    fill: var(--black-color-logo);
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    &:focus,
+    &:hover {
+      fill: var(--accent-color);
+      cursor: pointer;
+      outline: none;
+    }
+    &-svg {
+      width: 24px;
+      height: 16px;
+    }
+  }
+  .mobile-menu {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 3;
+    overflow-y: scroll;
+
+    top: 0;
+    left: 0;
+
+    transform: scale(0);
+    // padding: 48px 40px;
+    padding-top: 3.428em;
+    padding-bottom: 3.428em;
+    padding-left: 2.857em;
+    padding-right: 1.07em;
+    background-color: var(--main-bg-color);
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.is-open {
+      transform: scale(1);
+    }
+    &__btn {
+      position: absolute;
+      top: 10px;
+      right: 3.125%;
+      border: none;
+      background-color: transparent;
+      fill: var(--main-color);
+      transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover,
+      &:focus {
+        fill: var(--accent-color);
+        cursor: pointer;
+        outline: none;
+      }
+    }
+
+    &__btn-svg {
+      // 40px
+      width: 2.87em;
+      height: 2.87em;
+    }
+
+    &__navigation {
+      margin-bottom: 38vh;
+    }
+
+    &__navigation-items {
+      &:not(:last-child) {
+        // 32px
+        margin-bottom: 2.285em;
+      }
+    }
+    &__navigation-link {
+      color: var(--main-color);
+      text-decoration: none;
+      font-weight: var(--link-weight);
+      // 40px
+      font-size: 2.857em;
+      line-height: 1.17;
+      letter-spacing: 0.02em;
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:focus,
+      &:hover {
+        color: var(--accent-color);
+        outline: transparent;
+        cursor: pointer;
+      }
+    }
+    &__contact-tel {
+      color: var(--accent-color);
+      text-decoration: none;
+      // 34px
+      font-size: 2.42em;
+      line-height: 1.17;
+      letter-spacing: 0.02em;
+    }
+    &__contact-mail {
+      display: block;
+      text-decoration: none;
+      color: var(--gray-text);
+      // 24px
+      font-size: 1.714em;
+      line-height: 1.16;
+      letter-spacing: 0.02em;
+    }
+    &__contact-items {
+      &:first-child {
+        // 32px
+        margin-bottom: 2.285em;
+      }
+      &:last-child {
+        // 64px
+        margin-bottom: 4.571em;
+      }
+    }
+    &__soclist {
+      display: flex;
+      align-items: center;
+      // width: 357px;
+    }
+    &__soclist-items {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child)::after {
+        display: block;
+        content: "";
+        // 22px
+        width: 1.571em;
+        height: 0;
+        // 10px
+        padding-right: 0.714em;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        transform: rotate(90deg);
+      }
+    }
+    &__soclink {
+      text-decoration: none;
+      color: var(--accent-color);
+      // 18px
+      font-size: 1.285em;
+      font-weight: 500;
+      line-height: 1.22;
+      letter-spacing: 0.02em;
+    }
+  }
+}
+@media screen and (max-width: 402px) {
+  .mobile-menu__soclink {
+    font-size: 0.8em;
+  }
+  .mobile-menu__contact-tel {
+    font-size: 1.9em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .navigation__button {
+    display: none;
+  }
+  .mobile-menu {
+    display: none;
+  }
+
+  .top {
+    align-items: center;
+    max-height: 80px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
+  .border-top {
+    border-bottom: 1px solid #ececec;
+  }
+
+  .navigation__list {
+    display: flex;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    margin-left: 88px;
+  }
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* навигация по сайту */
+  .navigation__link--menu {
+    display: none;
+  }
+  .navigation__items {
+    .navigation__list &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+
+  .navigation__link {
+    position: relative;
+    color: var(--main-color);
+    text-decoration: none;
+
+    font-weight: var(--link-weight);
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+
+    padding-bottom: 32px;
+    padding-top: 32px;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    .navigation &:hover,
+    .navigation &:focus {
+      color: var(--accent-color);
+    }
+  }
+
+  /* контактная информация хедер*/
+
+  .contact {
+    & .contact__link:hover,
+    & .contact__link:focus {
+      color: var(--accent-color);
+    }
+    .top &:last-child {
+      margin-left: auto;
+    }
+  }
+  .contact__items:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .contact__link {
+    display: flex;
+    align-items: center;
+    color: var(--gray-text);
+    text-decoration: none;
+
+    font-weight: var(--link-weight);
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.02em;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .icon-head-mail {
+    width: 14px;
+    height: 10px;
+    margin-right: 8px;
+    fill: currentColor;
+  }
+
+  .icon-head-tel {
+    width: 10px;
+    height: 14px;
+    margin-right: 8px;
+    fill: currentColor;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .top {
+    max-height: 80px;
+    padding-top: 24px;
+    padding-bottom: 25px;
+
+    & .contact:last-child {
+      margin-left: auto;
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
+  .border-top {
+    border-bottom: 1px solid #ececec;
+  }
+  .navigation {
+    display: flex;
+  }
+  .navigation__list {
+    display: flex;
+    margin-left: 93px;
+  }
+
+  /* навигация по сайту */
+  .navigation__link--menu {
+    display: none;
+  }
+  .navigation__items {
+    position: relative;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    .navigation__list &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+
+  .navigation__link {
+    color: var(--main-color);
+    text-decoration: none;
+
+    font-weight: var(--link-weight);
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+
+    padding-bottom: 32px;
+    padding-top: 32px;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    .navigation &:hover,
+    .navigation &:focus {
+      color: var(--accent-color);
+    }
+  }
+
+  /* контактная информация хедер*/
+
+  .contact {
+    display: flex;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    & .contact__items:not(:last-child) {
+      margin-right: 45px;
+      margin-bottom: 0px;
+    }
+    & .contact__link:hover,
+    & .contact__link:focus {
+      color: var(--accent-color);
+    }
+  }
+
+  .contact__link {
+    display: flex;
+    align-items: center;
+    color: var(--gray-text);
+    text-decoration: none;
+
+    font-weight: var(--link-weight);
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .icon-head-mail {
+    width: 16px;
+    height: 12px;
+    margin-right: 10px;
+    fill: currentColor;
+  }
+
+  .icon-head-tel {
+    width: 10px;
+    height: 16px;
+    margin-right: 10px;
+    fill: currentColor;
+  }
+}
+.current {
+  color: var(--accent-color);
+}
