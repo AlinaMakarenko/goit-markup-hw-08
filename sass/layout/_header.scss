@@ -180,6 +180,10 @@
   .mobile-menu__contact-tel {
     font-size: 1.9em;
   }
+  .mobile-menu__navigation {
+    margin-bottom: 20vh;
+}
+ 
 }
 @media screen and (min-width: 768px) {
   .navigation__button {
@@ -188,6 +192,7 @@
   .mobile-menu {
     display: none;
   }
+  
 
   .top {
     align-items: center;
@@ -242,6 +247,7 @@
     .navigation &:focus {
       color: var(--accent-color);
     }
+
   }
 
   /* контактная информация хедер*/
